@@ -1,24 +1,29 @@
 {
-  "name": "foundation-zurb-template",
-  "version": "1.0.0",
-  "description": "Official ZURB Template for Foundation for Sites.",
-  "main": "gulpfile.js",
+  "name": "marko-express",
+  "version": "0.0.0",
+  "description": "Sample Express-based server app that integrates the marko module for rendering a view",
+  "main": "./server.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build --production"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "ZURB <foundation@zurb.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marko-js-samples/marko-express.git"
+  },
+  "author": "Patrick Steele-idem <pnidem@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marko-js-samples/marko-express/issues"
+  },
+  "homepage": "https://github.com/marko-js-samples/marko-express",
   "dependencies": {
     "browser-refresh-taglib": "^1.0.3",
     "express": "^4.9.4",
     "marko": "^4.3.0",
     "sequelize": "^4.4.2",
-    "serve-static": "^1.6.2",
-    "foundation-sites": "~6.4.1",
-    "jquery": ">=3.0.0",
-    "what-input": "^4.1.3",
-    "motion-ui": "~1.2.2"
+    "serve-favicon": "^2.4.3",
+    "serve-static": "^1.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -32,35 +37,29 @@
     "gulp-clean-css": "^3.3.1",
     "gulp-cli": "^1.2.1",
     "gulp-concat": "^2.5.2",
+    "gulp-ext-replace": "^0.3.0",
     "gulp-extname": "^0.2.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.2.1",
     "gulp-load-plugins": "^1.1.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.2.0",
     "gulp-uncss": "^1.0.1",
+    "gulp-yaml": "^1.0.1",
     "js-yaml": "^3.4.6",
-    "panini": "^1.3.0",
+    "nightmare": "^2.10.0",
+    "jquery": ">=3.0.0",
+    "foundation-sites": "6.4.1",
+    "motion-ui": "~1.2.2",
+    "what-input": "^4.1.3",
+    "octophant": "^1.0.1",
+    "pleeease": "^4.2.1",
     "rimraf": "^2.4.3",
-    "style-sherpa": "^1.0.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^2.6.1",
     "webpack-stream": "^3.2.0",
     "yargs": "^3.8.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zurb/foundation-zurb-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "private": true
+  }
 }

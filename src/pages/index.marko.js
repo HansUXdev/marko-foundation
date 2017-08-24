@@ -1,4 +1,4 @@
-// Compiled using marko@4.4.21 - DO NOT EDIT
+// Compiled using marko@4.4.26 - DO NOT EDIT
 "use strict";
 
 var marko_template = module.exports = require("marko/src/html").t(__filename),
@@ -32,7 +32,9 @@ function render(input, out) {
       author: "John Doe"
     }, out);
 
-  out.w("<link rel=\"stylesheet\" href=\"" +
+  out.w("<link rel=\"icon\" href=\"" +
+    marko_escapeXmlAttr(data.root) +
+    "/img/favicon.ico\"><link rel=\"stylesheet\" href=\"" +
     marko_escapeXmlAttr(data.root) +
     "/css/app.css\"></head><body>");
 

@@ -1,0 +1,16 @@
+$ var root = '../public/assets';
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <site-meta title="Foundation for Sites" keyword="HTML,CSS,XML,JavaScript" author="John Doe"/>
+    <link rel="icon" href="public/assets/img/favicon.ico">
+    <link rel="stylesheet" href="${root}/css/app.css">
+  </head>
+  <body>
+
+    <!-- this comes from <@body> -->
+    <include(input.body)/>
+    <script src="${root}/js/app.js"></script>
+  </body>
+</html>
