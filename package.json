@@ -1,7 +1,7 @@
 {
-  "name": "marko-express",
-  "version": "0.0.0",
-  "description": "Sample Express-based server app that integrates the marko module for rendering a view",
+  "name": "marko-foundation",
+  "version": "1.0.0",
+  "description": "A markoJS fork of Zurb's template.",
   "main": "./server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-express.git"
+    "url": "https://github.com/HansUXdev/marko-foundation"
   },
-  "author": "Patrick Steele-idem <pnidem@gmail.com>",
+  "author": "Hans <ttps://github.com/HansUXdev/>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/marko-js-samples/marko-express/issues"
+    "url": "https://github.com/HansUXdev/marko-foundation/issues"
   },
-  "homepage": "https://github.com/marko-js-samples/marko-express",
+  "homepage": "https://foundation-marko.herokuapp.com/",
   "dependencies": {
     "browser-refresh-taglib": "^1.0.3",
     "express": "^4.9.4",

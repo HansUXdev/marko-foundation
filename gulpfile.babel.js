@@ -56,7 +56,7 @@ function clean(done) {
 // Copy files out of the src/partials/building-blocks folder
 function blocks(cb) {
   return gulp.src('src/partials/building-blocks/*')
-    .pipe(ext('.handlebars'))
+    .pipe(ext('.marko'))
     .pipe(gulp.dest('views/partials/blocks'));
     cb();
 }

@@ -3,6 +3,9 @@ Sample App: Marko + Express
 
 This sample app illustrates how to integrate Marko with a very basic Express app. For this sample app, we use the streaming API to stream the output of the template rendering to the HTTP response stream. In addition, this sample application illustrates how to create custom tags that can be embedded into your templates.
 
+# Live Demo
+Check out the [live demo](https://foundation-marko.herokuapp.com/)!
+
 # Installation
 
 ```
@@ -18,6 +21,14 @@ Navigate to [http://localhost:8080/](http://localhost:8080/) to see your server 
 
 ```
 .
+├── src - Source Directory 
+│   ├── 
+│   │   ├── renderer.js
+│   │   └── template.marko
+│   ├── app-header -
+│   │   └── template.marko
+│   └── app-hello - 
+│       └── renderer.js
 ├── components - Directory containing custom tag implementations
 │   ├── app-button - Custom tag for rendering a Bootstrap-styled button
 │   │   ├── renderer.js
@@ -37,6 +48,7 @@ Navigate to [http://localhost:8080/](http://localhost:8080/) to see your server 
 ```
 
 # Details
+## Layouts
 
 ## Page Rendering
 
@@ -45,10 +57,20 @@ This application registers a single "/" route that renders out the main index pa
 The template is loaded using the following code:
 
 ```javascript
+var templatePages = './src/pages';
 var indexTemplate = require('./index.marko');
 ```
 
-Later, in the route handler, the template is rendered writable HTTP response stream as shown in the code below:
+```javascript
+app.get('/', function(req, res) {
+    res.marko(indexTemplate, {
+            name: 'Frank',
+            count: 30
+        });
+});
+```
+
+Or, in the route handler, the template is rendered writable HTTP response stream as shown in the code below:
 
 ```javascript
 indexTemplate.stream({

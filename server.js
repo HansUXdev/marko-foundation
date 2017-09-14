@@ -12,36 +12,29 @@ var port 			= process.env.PORT || 8080;
 app.use('/public', express.static('public'));
 app.use(favicon(path.join(__dirname, 'public/assets/img', 'favicon.ico') ));
 
-var src = './src/pages';
-var indexTemplate = require(src+'/index.marko');
-var test = require(src+'/page.marko');
+var templatePages = './src/pages';
+var indexTemplate = require(templatePages+'/index.marko');
+// var test = require(src+'/page.marko');
 
 var assets = './public/assets';
+
 
 app.get('/', function(req, res) {
     res.marko(indexTemplate, {
             name: 'Frank',
-            count: 30,
-		    root: assets,
-		    colors: [
-		      'red',
-		      'blue'
-		    ]
-
+            count: 30
         });
-});
-
-
-app.get('/test', function(req, res) {
-    res.marko(test, {
-            name: 'Frank',
-            count: 30,
-            colors: [
-              'green',
-              'yellow'
-            ]
-
-        });
+    // use mongoose to find users
+    // var query = User.find({}).limit(10);
+    // query.exec(function (err, user) {
+    //     if (err) {
+    //         throw Error;
+    //     }
+    //     res.marko(indexTemplate, {
+    //     	users: user
+    //     });
+    //     //// res.render('home', {users: docs});
+    // });
 });
 
 

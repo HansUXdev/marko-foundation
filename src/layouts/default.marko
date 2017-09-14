@@ -1,3 +1,4 @@
+<!-- define the path to your assets-->
 $ var root = '../public/assets';
 
 <!doctype html>
@@ -11,6 +12,14 @@ $ var root = '../public/assets';
 
     <!-- this comes from <@body> -->
     <include(input.body)/>
+
+    <!--
+    Page will automatically refresh any time a template is modified
+    if launched using the browser-refresh Node.js process launcher:
+    https://github.com/patrick-steele-idem/browser-refresh
+    -->
+    <browser-refresh/>
+
     <script src="${root}/js/app.js"></script>
   </body>
 </html>

@@ -1,18 +1,20 @@
-
-
-
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <site-meta title="Foundation for Sites" keyword="HTML,CSS,XML,JavaScript" author="John Doe"/>
-    <link rel="icon" href="${data.root}/img/favicon.ico">
-  
-    <link rel="stylesheet" href="${data.root}/css/app.css">
-  </head>
-  <body>
+<!-- 
+Prototype your page with javascript instead of front-matter ! 
+-->
+$ {
+	var title = "Welcome to Foundation with Marko";
+  var colors = [
+    'red',
+    'blue',
+    'green'
+  ]
+};
+<!--Define the layout you are using. -->
+<include('../layouts/default.marko')>
+  <@body>
     <div class="row">
       <div class="large-12 columns">
-        <app-header title="Welcome to Foundation with Marko"/>
+        <app-header title="${title}"/>
       </div>
     </div> 
 
@@ -24,14 +26,16 @@
             <app-hello name=data.name/>
             You have ${data.count} new messages!
         </p>
-        <ul if(data.colors && data.colors.length)>
-            <li style="color: ${color}" for(color in data.colors)>
+
+
+
+        <ul if(colors && colors.length)>
+            <li style="color: ${color}" for(color in colors)>
             ${color}
             </li>
         </ul>
         <div else>No colors!</div>
-
-
+        
           <p>Once you've exhausted the fun in this document, you should check out:</p>
           <div class="row">
             <div class="large-4 medium-4 columns">
@@ -154,13 +158,13 @@
 
       <div class="large-4 medium-4 columns">
         <h5>Try one of these buttons:</h5>
-        <!-- 
         <p><a href="#" class="small button">Simple Button</a><br/>          
         <a href="#" class="medium success button">Success Btn</a><br/>
         <a href="#" class="medium alert button">Alert Btn</a><br/>
         <a href="#" class="medium secondary button">Secondary Btn</a></p>   
+        <!-- 
         -->
-
+        <!--
         <app-button label="Default"/>
         <app-button label="Primary" variant="primary" size="large"/>
         <app-button label="Primary" variant="primary"/>
@@ -171,6 +175,7 @@
         <app-button label="Warning" variant="warning"/>
         <app-button label="Danger" variant="danger"/>
         <app-button label="Link" variant="link"/>
+        -->
 
         <div class="callout">
           <h5>So many components, girl!</h5>
@@ -182,18 +187,6 @@
 
 
     <marketing-footer/>
-        <!-- 
-        <include("./footer.marko")/>
-        -->
 
-        <!--
-        Page will automatically refresh any time a template is modified
-        if launched using the browser-refresh Node.js process launcher:
-        https://github.com/patrick-steele-idem/browser-refresh
-        -->
-        <browser-refresh/>
-
-    <script src="${data.root}/js/app.js"></script>
-  </body>
-</html>
-
+  </@body>
+</include>
